@@ -71,7 +71,7 @@ fun BasicCalculatorLayout(
             listOf("0", ".", "=", "+")
         )
 
-        // Display the buttons grid
+        //uttons grid
         buttons.forEach { row ->
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -308,8 +308,6 @@ fun eval(expr: String): Double {
     return parseExpression(s)
 }
 
-// Parsing with recursion based on operator precedence
-
 private var pos = -1
 private var ch = 0
 private lateinit var str: String
@@ -360,8 +358,8 @@ private fun parseTerm(): Double {
 }
 
 private fun parseFactor(): Double {
-    if (eat('+'.code)) return parseFactor() // unary plus
-    if (eat('-'.code)) return -parseFactor() // unary minus
+    if (eat('+'.code)) return parseFactor()
+    if (eat('-'.code)) return -parseFactor() 
 
     var x: Double
     val startPos = pos
